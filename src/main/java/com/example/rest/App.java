@@ -39,17 +39,18 @@ public class App {
         app.run(args);
  
         System.out.println("Server started");
- 
-        runGetRequest();
+        
+        for (int i = 0; i < 10; i++)
+          runGetRequest(i);
     }
  
     /**
      * Performs a simple GET request and prints the result to the log.
      */
-    private static void runGetRequest() {
+    private static void runGetRequest(int i) {
  
     	// sample URL
-        String url = "http://129.157.179.180:3000/shield/33/45/blue/JulienCamus38";
+        String url = "http://129.157.179.180:3000/fighters/45/" + i + "/blue/JulienCamus38";
         CloseableHttpResponse response = null;
  
         try {
